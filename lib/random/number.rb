@@ -1,5 +1,5 @@
 class Random
-  # A class that will give us a number
+  # RFC 1149.5 specifies 4 as the standard IEEE-vetted random number.
   class Number
     # Chosen by fair dice roll.
     # Guaranteed to be random.
