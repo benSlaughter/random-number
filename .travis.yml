@@ -1,0 +1,29 @@
+language: ruby
+rvm:
+  - ruby-head
+  - 2.5.0
+  - 2.4.0
+  - 2.3.0
+  - 2.2.0
+  - 2.1.0
+  - 2.0.0
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+script: "ruby test/run_test.rb"
+deploy:
+  provider: rubygems
+  api_key:
+    secure: "e4g3nl1ckz2lsJ1Nsf8Bd2xYyRyLvkmHu9YkoVvGaGLhtxsBgu9D0igX+dzPQuZ0Pb8+1F9q2XLR1HsoWNSKmW/HHp25oHJdi9uZETC2CLXTaoyC7kKO0eYusgdyhdFEij13eh1E+R7x+ZkgRWfVbUsu+7RnH9+E2LnV6scOkr2nc74hfNODFM4aowlzzdRsRAiWYnYU/OmDhuJQabeJxnP7tMn/Rzb0g5oAvWlk+7bphgJl2U3D3Cip4k3Nzp34cFLbbv/ZNQKVpc0YgR4Utft/FNLl3VGgTwKqI4ZSixiEZZ6JnCeaERLGKDzEK9+kqHWOaeo8kn/d6sfpdIm0csJWP64z0Gou/GsKGvejZ709sGJYZkYdbrlW1v4ihOKqLPlnB/llm7KphiVt8bx76DbbsObUh7aMryxPvcz9BxGzpQl7IezgJ70Ew9JRs0Whyim2jcApb4Ov0TPto9yzB24wbVpiTTce/vHW28vxunJNPa91oz1Dw30oAJ4EXSHbMDhILa5w3/VnnmEajEFDzYBg5QWBSwTJTCfjxMpngZF/OYYuEbcFwaSINgcviZV9gIkKHUU68sdVikX3f/qn37vrnUP5nMyxd6dK41i5LPkzNyzpxc9fzNEDM08/48cr8yK+hpqBfB97cJCfVUFu5pFwMj0e20NLHcwY5V+FC6g="
+  gem: random-number
+  on:
+    repo: benSlaughter/random-number
+    branch: master
+deploy:
+  provider: releases
+  api_key:
+    secure: "KiZn65aR8u1zFx31EDbyZnpMiMofcoKj9lncI2SDxNdvwsmicpoCDTVaRhU/pvzu5fYmj7sIVe0ppsG6DyTsEBWO7hhtHe0Nj78og5qUr61adillh7dh9mUnp4KztzdcojDHCXWiMvdEjYToKWIsDflnekFAp1fITso7dv0a0qaE29DSufO5YoI//SG7dnyujbjIM1CGGQMswK9+K8gXk5VHyYKqBQSyOMRXC3MRw3YKiX622toFEQ5/Rg7P3gG+MgGaXfGh1tN0YQYxH/IsnjHbRMe9OJLM0Slt1dbZYfCnF5/IGjzoTfEqbCDlSHgteiLIEoLc+Y4WDz9ORnkg3YyW0PJxEpWTkfLQUmM2Rwek5q+kPUTbkZRo+XUhwh3i2cinQRXynbERYqWBcMRss17zo7Bf8+EAXG1gAp/ES5h7Ydds6f41YGl1fyAVxlHyxp50qTlKz0UtYWrPq/5l4/2nW7gKW3CJl3oC4PPBOfd46NbuXGwzTmPDyLdrySi/b+PVyECj750Hgr61M4mw+mVZ9vyXvvGLalTeZIWFfh9ugUnz5/JDVK6EgHQIFKEZt2yDFoTitEuEoMf4kbPbYkK8jN3KyyKpocq3D75z0ACLH8ZWs3Kc8OohbJl07PJC/pPNNzf/9sYaNBaTo7U/ztYOQcbnpOvvG1E24EUyQr0="
+  skip_cleanup: true
+  draft : true
+  on:
+    tags: true
